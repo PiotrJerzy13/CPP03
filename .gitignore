@@ -1,0 +1,4 @@
+*.txt
+*.pdf
+*.o
+.DS_Store
