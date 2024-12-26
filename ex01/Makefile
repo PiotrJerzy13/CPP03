@@ -1,24 +1,35 @@
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -I../ex00
 
 NAME = scavtrap
-SRC =../ex00/ClapTrap.cpp main.cpp ScavTrap.cpp
 OBJ_DIR = bin
-OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
-all: $(NAME)
+SRC = ScavTrap.cpp main.cpp
+EX00_SRC = ../ex00/ClapTrap.cpp
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
+EX00_OBJ = $(OBJ_DIR)/ClapTrap.o
+
+
+all: $(EX00_OBJ) $(NAME)
+
+$(EX00_OBJ): $(EX00_SRC)
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(NAME): $(OBJ) $(EX00_OBJ)
+	$(CC) $(CFLAGS) $(OBJ) $(EX00_OBJ) -o $(NAME)
+
 clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
+	@$(MAKE) -C ../ex00 fclean
 	rm -f $(NAME)
 
 re: fclean all
+
