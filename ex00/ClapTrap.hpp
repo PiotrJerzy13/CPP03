@@ -14,7 +14,7 @@ private:
 
 public:
     ClapTrap();
-    ClapTrap(const std::string& name);
+    explicit ClapTrap(const std::string& name);
     ClapTrap(const ClapTrap& other);
     ClapTrap& operator=(const ClapTrap& other);
     ~ClapTrap();
@@ -28,7 +28,6 @@ protected:
     void setHitPoints(unsigned int hp) { hitPoints = hp; }
     void setEnergyPoints(unsigned int ep) { energyPoints = ep; }
     void setAttackDamage(unsigned int ad) { attackDamage = ad; }
-    void setName(const std::string& n) { name = n; }
 
     unsigned int getHitPoints() const { return hitPoints; }
     unsigned int getEnergyPoints() const { return energyPoints; }
