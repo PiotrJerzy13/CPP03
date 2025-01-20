@@ -6,7 +6,7 @@
 /*   By: pwojnaro <pwojnaro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 12:40:19 by pwojnaro          #+#    #+#             */
-/*   Updated: 2025/01/20 12:41:52 by pwojnaro         ###   ########.fr       */
+/*   Updated: 2025/01/20 12:56:41 by pwojnaro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	ClapTrap& operator=(const ClapTrap& other);
 	~ClapTrap();
 
-	void attack(std::string_view target);
+	virtual void attack(std::string_view target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	unsigned int getHitPoints() const { return hitPoints; }
