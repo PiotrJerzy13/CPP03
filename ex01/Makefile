@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -I../ex00
+CFLAGS = -Wall -Werror -Wextra -std=c++17 -I../ex00
 
 NAME = scavtrap
 OBJ_DIR = bin
