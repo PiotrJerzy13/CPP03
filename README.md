@@ -1,6 +1,5 @@
 ### **README.md**
 
-```markdown
 # C++ Module 03: Inheritance
 
 This repository contains solutions for **Exercises 00 to 02** of the **C++ Module 03: Inheritance**. These exercises introduce fundamental concepts of object-oriented programming, focusing on constructors, destructors, inheritance, and polymorphism.
